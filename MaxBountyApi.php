@@ -31,8 +31,10 @@ class MaxBountyApi {
         die("Not Implemented");
     }
 
-    public function campingInfo($offerId) {
-        die("Not Implemented");
+    public function campaignInfo($offerId) {
+        $params = array('keyStr' => $this->keyStr->return, 'offerId' => $offerId);
+        $result = $this->sc->campaignInfo( $params)->return;
+        return $this->resultParser($result);
     }
 
     public function getCampaignCreatives($offerId) {
