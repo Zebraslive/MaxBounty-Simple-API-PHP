@@ -34,7 +34,7 @@ class MaxBountyApi {
     public function campaignInfo($offerId) {
         $params = array('keyStr' => $this->keyStr->return, 'offerId' => $offerId);
         $result = $this->sc->campaignInfo( $params)->return;
-        return $this->resultParser($result);
+        return $this->resultParser($result)[0];
     }
 
     public function getCampaignCreatives($offerId) {
