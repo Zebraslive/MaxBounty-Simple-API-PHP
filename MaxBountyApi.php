@@ -4,8 +4,6 @@ use SoapClient;
 
 /**
  * MaxBounty Simple API PHP
- *
- * @author Luis Henrique Justin <contato@2labs.com.br>
  */
 class MaxBountyApi {
 
