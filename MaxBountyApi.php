@@ -27,8 +27,11 @@ class MaxBountyApi {
         return $this->sc->getKey($loginDetails);
     }
 
-    public function campingList() {
-        die("Not Implemented");
+    public function campaignList() {
+          $params = array('keyStr' => $this->keyStr->return);
+        $result = $this->sc->campaignList($params)->return;
+
+        return $this->resultParser($result);
     }
 
     public function campingInfo($offerId) {
@@ -140,7 +143,9 @@ class MaxBountyApi {
     }
 
     public function getAffiliateCap($offerId) {
-        die("Not Implemented");
+          $params = array('keyStr' => $this->keyStr->return, 'offerId' => $offerId);
+        $result = $this->sc->getAffiliateCap($params)->return;
+        return $this->resultParser($result);
     }
 
     private function resultParser($result) {
